@@ -1,4 +1,4 @@
-import sum from '../basic';
+import orderByProps from '../orderByProps';
 
 test('should sum', () => {
   const result = sum([1, 2, 3]);
