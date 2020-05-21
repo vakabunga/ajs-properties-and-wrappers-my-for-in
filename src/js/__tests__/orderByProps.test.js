@@ -1,7 +1,27 @@
-// import orderByProps from '../orderByProps';
+import orderByProps from '../orderByProps';
 
-// test('should sum', () => {
-//   const result = sum([1, 2, 3]);
-
-//   expect(result).toBe(6);
-// });
+describe('orderByProps:', () => {
+  test('should return array sorted by income filter', () => {
+    const obj = {
+      name: 'мечник',
+      health: 10,
+      level: 2,
+      attack: 80,
+      defence: 40,
+    };
+    const result = orderByProps(obj, ['name', 'level']);
+    expect(result).toEqual([{ name: 'мечник' }, { level: 2 }, { attack: 80 }, { defence: 40 }, { health: 10 }]);
+  });
+  test('should return array sorted by alphabet', () => {
+    const obj = {
+      name: 'мечник',
+      health: 10,
+      level: 2,
+      attack: 80,
+      defence: 40,
+    };
+    expect(() => {
+      orderByProps(obj);
+    }).toEqual([{ attack: 80 }, { defence: 40 }, { health: 10 }, { level: 2 }, { name: 'мечник' }]);
+  });
+});
