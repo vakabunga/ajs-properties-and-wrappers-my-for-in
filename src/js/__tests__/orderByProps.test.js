@@ -20,8 +20,7 @@ describe('orderByProps:', () => {
       attack: 80,
       defence: 40,
     };
-    expect(() => {
-      orderByProps(obj);
-    }).toEqual([{ attack: 80 }, { defence: 40 }, { health: 10 }, { level: 2 }, { name: 'мечник' }]);
+    const result = orderByProps(obj);
+    expect(result).toEqual([{ attack: 80 }, { defence: 40 }, { health: 10 }, { level: 2 }, { name: 'мечник' }]);
   });
 });
